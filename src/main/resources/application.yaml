@@ -2,7 +2,5 @@ spring:
   application:
     name: api.fala
   ai:
-    google:
-      genai:
-        api-key: ${GEMINI_API_KEY}
-
+    openai:
+      api-key: ${OPENAI_API_KEY}

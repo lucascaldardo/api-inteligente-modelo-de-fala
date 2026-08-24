@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -27,6 +28,33 @@ dependencies {
 	implementation 'org.springframework.ai:spring-ai-starter-model-openai'
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
+def loadEnv() {
+	def envFile = rootProject.file('.env')
+	def envVars = [:]
+	if (envFile.exists()) {
+		envFile.readLines().each { line ->
+			def trimmed = line.trim()
+			if (trimmed && !trimmed.startsWith('#') && trimmed.contains('=')) {
+				def (key, value) = trimmed.split('=', 2)
+				envVars[key.trim()] = value.trim()
+			}
+		}
+	}
+	return envVars
 }
+
+tasks.withType(Test).configureEach {
+	useJUnitPlatform()
+	environment loadEnv()
+	if (System.getenv("OPENAI_API_KEY")) {
+		environment "OPENAI_API_KEY", System.getenv("OPENAI_API_KEY")
+	}
+}
+
+tasks.named('bootRun') {
+	environment loadEnv()
+	if (System.getenv("OPENAI_API_KEY")) {
+		environment "OPENAI_API_KEY", System.getenv("OPENAI_API_KEY")
+	}
+}
+
