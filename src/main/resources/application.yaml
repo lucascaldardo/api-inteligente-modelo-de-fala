@@ -11,4 +11,14 @@ spring:
             language: pt
             temperature: 0
             response-format: text
-            prompt: "Audio em portugues brasileiro, audio contem descrição de gastos financeiros."
+            prompt: >-
+              Audio em portugues brasileiro, audio contem descrição de gastos financeiros.
+              As frases geralmente contem:
+              - um valor em reais (numero + reais);
+              - um ação (gastei, paguei. comprei);
+              - um local ou estabelecimento (mercado, farmacia, restaurante, loja, etc...)
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+
