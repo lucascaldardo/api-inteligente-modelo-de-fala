@@ -4,3 +4,11 @@ spring:
   ai:
     openai:
       api-key: ${OPENAI_API_KEY}
+      audio:
+        transcription:
+          options:
+            model: whisper-1
+            language: pt
+            temperature: 0
+            response-format: text
+            prompt: "Audio em portugues brasileiro, audio contem descrição de gastos financeiros."

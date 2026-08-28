@@ -19,11 +19,13 @@ public class TollCallingIT {
 
         @Tool(description = "Soma dois numeros inteiros")
         public int sum(int a, int b){
+            System.out.println("🔥 [TOOL CALLED] Executando sum com a=" + a + " e b=" + b);
             return a + b;
         }
 
         @Tool(description = "Subtrai dois numeros inteiros")
         public int diff(int a, int b){
+            System.out.println(" [TOOL CALLED] Executando diff com a=" + a + " e b=" + b);
             return a - b;
         }
 
