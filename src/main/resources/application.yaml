@@ -2,6 +2,9 @@ spring:
   application:
     name: api.fala
   ai:
+    model:
+      audio:
+        speech: openai
     openai:
       api-key: ${OPENAI_API_KEY}
       audio:
@@ -17,8 +20,13 @@ spring:
               - um valor em reais (numero + reais);
               - um ação (gastei, paguei. comprei);
               - um local ou estabelecimento (mercado, farmacia, restaurante, loja, etc...)
+        speech:
+          options:
+            model: gpt-4o-mini-tts
+            voice: nova
+            speed: 1.2
+            response-format: mp3
 
 logging:
   level:
     org.springframework.ai: DEBUG
-
