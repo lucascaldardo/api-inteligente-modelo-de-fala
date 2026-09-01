@@ -1,8 +1,4 @@
-Achei o problema! Há um erro de sintaxe no YAML do README. O problema está no bloco de código do título — os asteriscos não estão sendo escapados corretamente.
-
-Aqui está o README **100% corrigido** e validado:
-
-```markdown
+```
 # 🤖 Smart Budget API — IA Generativa com Spring Boot & Spring AI
 
 > Projeto desenvolvido durante o **Bootcamp Santander + DIO**, explorando a integração de **Inteligência Artificial Generativa** em uma aplicação Java de orçamento financeiro com arquitetura profissional.
@@ -165,10 +161,4 @@ Projeto desenvolvido no **Bootcamp Santander + DIO**
 
 ---
 
-### 🔧 O que foi corrigido:
 
-1. ❌ Removidos os `**` do YAML front-matter (causava o erro)
-2. ✅ Removed escaped asterisks no bloco do title
-3. ✅ Removidos asteriscos desnecessários que quebravam a sintaxe YAML
-
-Agora é só **copiar e colar direto no seu `README.md`** — 100% funcional! 🚀
