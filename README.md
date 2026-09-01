@@ -1,6 +1,5 @@
 ---
 
-```markdown
 # 🤖 Smart Budget API — IA Generativa com Spring Boot & Spring AI
 
 > Projeto desenvolvido durante o **Bootcamp Santander + DIO**, explorando a integração de **Inteligência Artificial Generativa** em uma aplicação Java de orçamento financeiro com arquitetura profissional.
